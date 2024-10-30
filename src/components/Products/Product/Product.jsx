@@ -1,10 +1,9 @@
+// import PropTypes from "prop-types";
 import "./Product.css";
 
 const Product = ({data}) => {
 
-    console.log(data)
 
-    
 
     return (
          <div className="product-box">
@@ -17,5 +16,9 @@ const Product = ({data}) => {
         </div>
     );
 };
+
+// Product.propTypes = {
+//     image: PropTypes.data.string
+// }
 
 export default Product;
