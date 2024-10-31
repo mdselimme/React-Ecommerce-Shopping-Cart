@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Product from "./Product/Product";
 import Cart from "../Cart/Cart";
-import { addToDataDb, getDbData } from "../Cart/getandsavedb";
+import { addToDataDb } from "../Cart/getandsavedb";
 
 
 const Products = () => {
@@ -13,11 +13,7 @@ const Products = () => {
         const newCart = [...cart, id.id];
         setCart(newCart);
         addToDataDb(cart);
-        const result = getDbData();
-        console.log(result)
     };
-
-   console.log(cart)
 
     useEffect(()=>{
         const url = 'https://fakestoreapi.com/products';
