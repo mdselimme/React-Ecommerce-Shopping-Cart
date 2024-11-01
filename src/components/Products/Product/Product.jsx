@@ -10,7 +10,7 @@ const Product = ({data, handleAddToCart}) => {
             <img className="w-[350px] h-[350px]" src={image} alt="" />
             <h2>{title}</h2>
             <div className="flex justify-between mt-10">
-            <button onClick={()=> handleAddToCart(data)} className="bg-green-600 px-10 py-3 rounded-lg">Add To Cart</button>
+            <button onClick={()=> handleAddToCart(data.id)} className="bg-green-600 px-10 py-3 rounded-lg">Add To Cart</button>
             <button className="bg-green-600 px-10 py-3 rounded-lg">Buy Now</button>
         </div>
         </div>
