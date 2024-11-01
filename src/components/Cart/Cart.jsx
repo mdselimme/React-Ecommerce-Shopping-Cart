@@ -1,21 +1,21 @@
 import PropTypes from "prop-types";
 
 
-const Cart = ({cart}) => {
+const Cart = ({cart, handleRemove}) => {
 
-    console.log(cart)
 
     return (
         <div className="my-10">
-            <h1 className="text-center text-2xl text-green-800 font-extrabold">Cart Product : <span>{cart.length}</span></h1>
+            <img className="w-10 h-10" src={cart?.image} alt="" />
+            <button onClick={()=> handleRemove(cart.id)}>Remove</button>
         </div>
     );
 };
 
 
 Cart.propTypes={
-    cart: PropTypes.array.isRequired,
-    products: PropTypes.array.isRequired
+    cart: PropTypes.object.isRequired,
+    handleRemove: PropTypes.func.isRequired
 }
 
 export default Cart;

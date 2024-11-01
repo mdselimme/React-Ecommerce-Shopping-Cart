@@ -22,4 +22,14 @@ const addtToLocalDb = id =>{
 };
 
 
-export {getDbData, addToDataDb, addtToLocalDb};
+// Remove Data From Local Storage 
+const removeDataDb = id =>{
+    console.log(id)
+    const dbData = getDbData();
+    console.log(dbData)
+    const remData = dbData.filter(idx => idx.id == id);
+    console.log(remData)
+}
+
+
+export {getDbData, addToDataDb, addtToLocalDb, removeDataDb};

@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Product from "./Product/Product";
+import { addtToLocalDb, getDbData, removeDataDb } from "../Cart/getandsavedb";
 import Cart from "../Cart/Cart";
-import { addtToLocalDb, getDbData } from "../Cart/getandsavedb";
 
 
 const Products = () => {
@@ -37,10 +37,18 @@ const Products = () => {
         addtToLocalDb(id);  
     };
 
+    const handleRemove = id => {
+        removeDataDb(id);
+    }
 
     return (
         <div className="mt-10 container mx-auto">
-              <Cart cart={cart} />
+              <h1 className="text-center text-2xl text-green-800 font-extrabold">Cart Product : <span>{cart.length}</span></h1>
+              <div className="flex">
+              {
+                cart.map((element)=> <Cart key={element?.id} handleRemove={handleRemove}  cart={element} />)
+              }
+              </div>
             <h1 className="text-3xl font-extrabold text-center">Products</h1>
             <div className="grid grid-cols-3 gap-20">
                 {
